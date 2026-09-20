@@ -1,0 +1,656 @@
+@charset "utf-8";
+
+/* ==========================================================================
+   AÉM WEBSITE STYLES
+   Association Étudiante de Mila
+
+   Brand guide:
+   https://abrissard.github.io/aem-branding/
+
+   Structure:
+   1. Fonts
+   2. Brand palette
+   3. Derived UI colours
+   4. Bulma variable overrides
+   5. Bulma
+   6. Site-specific styles
+   ========================================================================== */
+
+
+/* ==========================================================================
+   2. OFFICIAL AÉM BRAND PALETTE
+   ========================================================================== */
+
+$aem-teal:  #2E7D76;
+$aem-ink:   #000000;
+$aem-paper: #FFFFFF;
+$aem-muted: #5B6664;
+$aem-text: $aem-muted;// #3F4947;
+
+
+/* ==========================================================================
+   3. DERIVED WEBSITE COLOURS
+   ========================================================================== */
+
+/*
+ * These are UI colours derived from the official teal.
+ * They are NOT additional logo colours.
+ *
+ * Keeping them here means all website colours remain controlled
+ * from one place.
+ */
+
+/* Darker teals for interaction states */
+$aem-teal-dark:   #245F5A;
+$aem-teal-darker: #1F514D;
+
+/* Light teal surfaces */
+$aem-teal-light:   #D5E5E4;
+$aem-teal-lighter: #EAF2F1;
+$aem-teal-pale:    #F2F7F7;
+
+/* Main page / surface colours */
+$page-background: $aem-paper;
+$surface:         $aem-paper;
+$border-light:    $aem-teal-light;
+
+
+/* ==========================================================================
+   4. BULMA GLOBAL VARIABLE OVERRIDES
+   ========================================================================== */
+
+/*
+ * IMPORTANT:
+ *
+ * These variables MUST come before the Bulma import below.
+ * Bulma reads them while it is being compiled.
+ */
+
+
+/* --- Typography --------------------------------------------------------- */
+
+$family-sans-serif: "Alegreya", Georgia, "Times New Roman", serif;
+$family-primary: $family-sans-serif;
+
+
+/* --- Core colours ------------------------------------------------------- */
+
+$white: $aem-paper;
+$black: $aem-ink;
+
+$primary: $aem-teal;
+
+$grey-dark: $aem-muted;
+$grey-light: $aem-teal-light;
+
+
+/* --- Page / text -------------------------------------------------------- */
+
+$body-background-color: $page-background;
+
+$body-color: $aem-text;
+$text: $aem-text;
+$text-strong: $aem-ink;
+
+$title-color: $aem-ink;
+$subtitle-color: $aem-muted;
+$content-heading-color: $aem-teal;
+
+
+/* --- Links -------------------------------------------------------------- */
+
+$link: $aem-teal;
+$link-hover: $aem-teal-dark;
+$link-focus: $aem-teal-dark;
+$link-active: $aem-teal-darker;
+
+
+/* --- Navbar ------------------------------------------------------------- */
+
+$navbar-background-color: $aem-paper;
+
+$navbar-item-color: $aem-teal;
+$navbar-item-hover-color: $aem-teal-dark;
+$navbar-item-hover-background-color: $aem-teal-lighter;
+
+$navbar-item-active-color: $aem-paper;
+$navbar-item-active-background-color: $aem-teal;
+
+$navbar-burger-color: $aem-teal;
+
+
+/* --- Forms / controls --------------------------------------------------- */
+
+$input-border-color: $border-light;
+$input-hover-border-color: $aem-teal;
+$input-focus-border-color: $aem-teal;
+
+$button-focus-border-color: $aem-teal;
+
+
+/* --- Cards -------------------------------------------------------------- */
+
+$card-background-color: $surface;
+
+
+/* --- Footer ------------------------------------------------------------- */
+
+$footer-background-color: $aem-teal;
+
+
+/* --- Layout ------------------------------------------------------------- */
+
+$fullhd-enabled: false;
+
+
+/* --- Additional size retained from previous site ----------------------- */
+
+$size-8: 0.5rem !default;
+
+
+/* ==========================================================================
+FONT OPTIONS
+========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "AEM Bauhaus";
+  src: url("../fonts/Bauhaus93.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+ $font-brand: "Alegreya", Georgia, serif;
+
+ $font-sans: "Nunito",
+             -apple-system,
+             BlinkMacSystemFont,
+             "Segoe UI",
+             sans-serif;
+
+
+ /*
+ * FONT SWITCH
+ *
+ * Change ONLY this line:
+ */
+
+ $site-font: $font-brand;
+ // $site-font: $font-sans;
+
+/* Alegreya is the main website typeface */
+$family-sans-serif: $site-font;
+$family-primary: $site-font;
+
+/* ==========================================================================
+   5. BULMA
+   ========================================================================== */
+
+/*
+ * Import the complete local Bulma build.
+ *
+ * This is intentionally preferable here to selectively importing components:
+ * the old site also loaded the complete Bulma CDN stylesheet, so using the
+ * complete local build prevents things such as cards, columns, tables, etc.
+ * from unexpectedly losing their styles after the CDN stylesheet is removed.
+ */
+
+@import "../julias-bulma/bulma/bulma.sass";
+
+/* ==========================================================================
+   TYPOGRAPHY II
+   ========================================================================== */
+   
+   
+   /* Clean, airy base typography */
+   html {
+     font-size: 17px;
+   }
+   
+   body {
+     font-family: $family-primary;
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: 1.65;
+   
+     color: $aem-text;
+     background-color: $page-background;
+   
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+   }
+   
+   
+   /* Normal headings: Alegreya, not Bauhaus */
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   .title,
+   .subtitle,
+   .content h1,
+   .content h2,
+   .content h3,
+   .content h4 {
+     font-family: $family-primary;
+     color: $aem-teal;
+   }
+   
+   h1,
+   .title.is-1 {
+     font-weight: 700;
+     line-height: 1.1;
+     letter-spacing: -0.02em;
+   }
+   
+   h2,
+   .title.is-2 {
+     font-weight: 700;
+     line-height: 1.2;
+     letter-spacing: -0.01em;
+   }
+   
+   h3,
+   h4,
+   h5,
+   h6 {
+     font-weight: 600;
+     line-height: 1.3;
+   }
+   
+   
+   /*
+    * Bauhaus is opt-in only.
+    *
+    * Use:
+    * <h1 class="brand-display">AÉM</h1>
+    */
+   .brand-display {
+     font-family: "AEM Bauhaus", sans-serif;
+     font-weight: 400;
+     letter-spacing: 0;
+   }
+   
+   
+   /* Navigation / UI typography */
+   .navbar,
+   .button,
+   .input,
+   .textarea,
+   .select {
+     font-family: $family-primary;
+   }
+   
+   .navbar-item,
+   .navbar-link {
+     font-size: 1rem;
+     font-weight: 500;
+     letter-spacing: 0.005em;
+   }
+
+/* ==========================================================================
+   6. BASE SITE STYLING
+   ========================================================================== */
+
+html {
+  background-color: $page-background;
+}
+
+
+/* ==========================================================================
+   8. LINKS
+   ========================================================================== */
+
+a {
+  color: $aem-teal;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+
+  &:hover {
+    color: $aem-teal-dark;
+  }
+
+  &:active {
+    color: $aem-teal-darker;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $aem-teal;
+    outline-offset: 3px;
+  }
+}
+
+
+/*
+ * Underline links inside normal text for accessibility/readability.
+ * Navbar and button links are excluded.
+ */
+
+.content a:not(.button) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
+
+/* ==========================================================================
+   9. NAVBAR
+   ========================================================================== */
+
+   .navbar {
+    background-color: $aem-paper;
+    border-bottom: 1px solid $aem-teal-light;
+    box-shadow: none;
+  }
+  
+  
+  /* Brand / site title */
+  .navbar-brand .navbar-item {
+    color: $aem-teal;
+    font-weight: 700;
+  }
+  
+  
+  /* Navigation links */
+  .navbar-start .navbar-item,
+  .navbar-end .navbar-item {
+    color: $aem-ink;
+    background-color: transparent;
+  }
+  
+  /* Burger menu */
+  .navbar-burger {
+    color: $aem-teal;
+  
+    &:hover {
+      background-color: $aem-teal-lighter;
+    }
+  }
+  
+  
+  /* Mobile dropdown */
+  .navbar-menu {
+    background-color: $aem-paper;
+  }
+
+  .navbar-social-button {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: $aem-ink;
+  
+    &:hover,
+    &:focus {
+      background: $aem-teal-lighter;
+      color: $aem-teal;
+    }
+  }
+
+    .navbar-start .navbar-item.is-active,
+    .navbar-end .navbar-item.is-active {
+    background-color: $aem-teal;
+    color: $aem-paper;
+    font-weight: 700;
+    }
+
+    .navbar-start .navbar-item.is-active:hover,
+    .navbar-start .navbar-item.is-active:focus,
+    .navbar-end .navbar-item.is-active:hover,
+    .navbar-end .navbar-item.is-active:focus {
+    background-color: $aem-teal-dark;
+    color: $aem-paper;
+    }
+
+/* ==========================================================================
+   10. FIXED TOP BAR
+   ========================================================================== */
+
+.topFixedBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 3.5rem;
+  z-index: 30;
+
+  background: $aem-paper;
+  border-bottom: 1px solid $aem-teal-light;
+}
+
+
+/* ==========================================================================
+   11. BUTTONS
+   ========================================================================== */
+
+.button {
+  font-family: $family-sans-serif;
+  font-weight: 700;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.button.is-primary {
+  background-color: $aem-teal;
+  border-color: $aem-teal;
+  color: $aem-paper;
+
+  &:hover,
+  &:focus {
+    background-color: $aem-teal-dark;
+    border-color: $aem-teal-dark;
+    color: $aem-paper;
+  }
+
+  &:active {
+    background-color: $aem-teal-darker;
+    border-color: $aem-teal-darker;
+  }
+}
+
+
+/* ==========================================================================
+   12. CONTENT / SECTIONS
+   ========================================================================== */
+
+.section {
+  background-color: transparent;
+}
+
+
+/*
+ * Optional reusable pale section:
+ *
+ * <section class="section is-soft">
+ */
+
+.section.is-soft {
+  background-color: $aem-teal-lighter;
+}
+
+
+/*
+ * Optional reusable teal section:
+ *
+ * <section class="section is-brand">
+ */
+
+.section.is-brand {
+  background-color: $aem-teal;
+  color: $aem-paper;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .title,
+  .subtitle {
+    color: $aem-paper;
+  }
+
+  a {
+    color: $aem-paper;
+    text-decoration: underline;
+
+    &:hover {
+      color: $aem-teal-light;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   13. CARDS
+   ========================================================================== */
+
+.card {
+  height: 100%;
+  background-color: $surface;
+}
+
+
+/*
+ * Horizontal card layout retained from the previous website.
+ */
+
+.card.is-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 50ex;
+  flex-grow: 0;
+  flex-shrink: 1;
+
+  box-shadow: none;
+  border-bottom: 1px solid $aem-teal-light;
+}
+
+.card.is-horizontal .card-image {
+  align-self: center;
+}
+
+.card.is-horizontal .image {
+  min-height: 100%;
+}
+
+.card.is-horizontal .card-content {
+  flex: 1;
+
+  padding-left: 0.5em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+
+  font-size: 0.8em;
+}
+
+.card.is-horizontal {
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  .is-divider {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+
+/* ==========================================================================
+   14. FORMS
+   ========================================================================== */
+
+.input,
+.textarea,
+.select select {
+  background-color: $aem-paper;
+  color: $aem-ink;
+
+  &:focus {
+    border-color: $aem-teal;
+    box-shadow: 0 0 0 0.125em rgba($aem-teal, 0.18);
+  }
+}
+
+
+/* ==========================================================================
+   15. FOOTER
+   ========================================================================== */
+
+footer,
+.footer {
+  padding: 1.75rem 1rem !important;
+
+  background-color: $aem-teal;
+  color: $aem-paper;
+
+  a {
+    color: $aem-paper;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+
+    &:hover {
+      color: $aem-teal-light;
+    }
+  }
+
+  strong,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $aem-paper;
+  }
+}
+
+
+/* ==========================================================================
+   16. SMALL UI DETAILS
+   ========================================================================== */
+
+hr {
+  background-color: $aem-teal-light;
+}
+
+
+/* Text selection */
+::selection {
+  background-color: $aem-teal-light;
+  color: $aem-ink;
+}
+
+
+/* Muted/supporting text */
+.has-text-muted {
+  color: $aem-muted !important;
+}
+
+
+/* Brand-coloured text */
+.has-text-brand {
+  color: $aem-teal !important;
+}
+
+
+/* Pale brand background */
+.has-background-brand-light {
+  background-color: $aem-teal-lighter !important;
+}
+
+
+/* ==========================================================================
+   END
+   ========================================================================== */

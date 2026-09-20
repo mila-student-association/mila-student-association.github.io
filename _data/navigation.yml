@@ -1,0 +1,8 @@
+- name: About
+  link: /about.html
+- name: Team
+  link: /team.html
+- name: Resources
+  link: /resources.html
+- name: Join
+  link: /join.html

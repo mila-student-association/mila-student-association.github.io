@@ -1,0 +1,9 @@
+---
+layout: page
+title: About AÉM
+permalink: /about
+---
+{% assign about_page = site.texts | where: "slug", "about" | first %}
+<div class = "content">
+{{ about_page.content | markdownify }}
+</div>

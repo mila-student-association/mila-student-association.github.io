@@ -1,0 +1,12 @@
+---
+layout: page
+title: Join
+permalink: /join
+---
+
+{% assign join_page = site.texts | where: "slug", "join" | first %}
+<div class="content">
+  <div class="content is-full">
+    {{ join_page.content | markdownify }}
+  </div>
+</div>

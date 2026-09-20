@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Portfolio</title>
-</head>
-<body>
-    <h1>Welcome to my website!</h1>
-    <p>This page is hosted completely free on GitHub Pages.</p>
-</body>
-</html>
+---
+layout: main
+title: Home
+---
+<div class = "columns is-vcentered is-multiline">
+      <div class = "column is-one-half content">
+        <figure class = "image">
+          <img src = "/assets/images/icon.png">
+        </figure>
+      </div>
+      <div class = "column is-one-half content">
+        {% assign index_page = site.texts | where: "slug", "index" | first %}
+        {{ index_page.content | markdownify }}
+        <br>
+      </div>
+</div>
+<!--  -->
+

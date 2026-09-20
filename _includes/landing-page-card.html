@@ -1,0 +1,42 @@
+
+<div class="columns container">
+    <div class = "column is-two-third content is-vcentered">
+        <p class="title is-3">{{ item.title }}</p> 
+        <p class="subtitle is-6"><a href="{{ item.link }}">{{ item.link }}</a></p>
+        <p class="subtitle is-6">{{ item.description }}</p> 
+    </div>
+    <div class = "column is-one-third content">
+      <figure class = "image">
+          <a href="{{ item.link }}">
+              <img src="assets/images/landing-page/{{ item.qr }}" alt="{{ item.link  }}">
+          </a>
+      </figure>
+  </div>
+</div>
+
+
+<!-- <div class="columns container">
+    <div class="column is-one-fifth"></div>
+    <div class="column pt-3">
+      <div class="card pt-3">
+        <div class="card-image">
+          <div class="media pt-3">
+            <div class="media-left">
+              <figure class="image is-128x128">
+                {% if item.qr != "none" %}
+                <img src="assets/images/landing-page/{{ item.qr }}" alt="{{ item.link  }}">
+                {% endif %}
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">{{ item.title }}</p>
+              <p class="subtitle is-6">{{ item.link }}</p>
+              <p class="subtitle is-6">{{ item.description }}</p> 
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    <div class="column is-one-fifth"></div>
+  </div> -->

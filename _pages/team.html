@@ -1,0 +1,12 @@
+---
+layout: page
+title: Team
+permalink: /team
+---
+
+{% assign team_page = site.texts | where: "slug", "team" | first %}
+<div class="content">
+  <div class="content is-full">
+    {{ team_page.content | markdownify }}
+  </div>
+</div>

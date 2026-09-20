@@ -1,0 +1,18 @@
+---
+layout: page
+title: Resources
+permalink: /resources
+---
+
+{% assign resources_page = site.texts | where: "slug", "resources" | first %}
+<div class="content">
+  <div class="content is-full">
+    {{ resources_page.content | markdownify }}
+  </div>
+  <div class="content"> 
+    {% assign resources = site.data.resources %}
+    {% for item in resources %}
+    {% include resources-item.html %}
+    {% endfor %}
+  </div>
+</div>

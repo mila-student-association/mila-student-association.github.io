@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <!-- <link rel="stylesheet" href="/assets/css/styles.css"> -->
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png">
+    <!--{% feed_meta %}-->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="/assets/js/navbar-burger.js"></script>
+    {% seo %}
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <title>TODO SEO tag</title>
+    <meta name="generator" content="Jekyll v3.9.3" />
+    <meta property="og:title" content="TODO" />
+    <meta name="author" content="Julia Kaltenborn" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="TODO"/>
+    <meta property="og:description" content="TODO."/>
+    <link rel="canonical" href="http://localhost:4000/_pages/page.html" />
+    <meta property="og:url" content="http://localhost:4000/_pages/page.html" />
+    <meta property="og:site_name" content="AÉM" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="AÉM"/>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Organization","name":"ML4Cryo"}, "description":"ML4Cryo is a community at the intersection of Machine Learning and Cryospheric Sciences.", "headline":"ML4Cryo","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/icon.png"},"name":"Logo ML4Cryo"},"url":"http://localhost:4000/_pages/page.html"}</script>
+    <!-- End Jekyll SEO tag -->
+     <!-- ownership verification -->
+    <meta name="google-site-verification" content="INSERT VERIFCATION CODE HERE" />
+    <meta name="Description" CONTENT="TODO.">
+  </head>
+  <body class="has-navbar-fixed-top">
+    <div class="topFixedBar"></div>
+    <section class="hero is-fullheight">
+      {% include navigation.html icon-size="lg" %}
+      <div class="hero-body">
+        <div class="container">
+          {{ content }}
+        </div>
+      </div>
+      {% include footer.html icon-size="lg" %}
+    </section>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+---
+layout: page
+title: Events
+permalink: /events
+---
+
+{% assign events_page = site.texts | where: "slug", "events" | first %}
+<div class = "content">
+{{ events_page.content | markdownify }}
+</div>
+
+
+<div class="columns is-multiline">
+{% assign venues = site.data.ml4cryo-venues %}
+{% for venue in venues %}
+    {% include venue-item.html %}
+{% endfor %}
+</div>

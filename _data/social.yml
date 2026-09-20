@@ -1,0 +1,32 @@
+# https://fontawesome.com/
+# https://jpswalsh.github.io/academicons/
+- name: Email
+  link: mailto:association-etudiante-de-mila@tutamail.com
+  icon:
+    source: fa
+    name: fa-envelope
+    type: far
+# - name: Discord
+#   link: https://discord.gg/pFKKwd3BP
+#   icon:
+#     source: fa
+#     name: fa-discord
+#     type: fab
+# - name: GitHub
+#   link: https://github.com/ml4cryo
+#   icon:
+#     source: fa
+#     name: fa-github
+#     type: fab
+# - name: Twitter
+#   link: https://x.com/ml4cryo
+#   icon:
+#     source: fa
+#     name: fa-twitter
+#     type: fab
+# - name: Bluesky
+#   link: https://bsky.app/profile/ml4cryo.bsky.social
+#   icon:
+#     source: fa
+#     name: fa-bluesky
+#     type: fab

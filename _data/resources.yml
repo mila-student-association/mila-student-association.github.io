@@ -1,0 +1,16 @@
+- title: Bylaws
+  link: https://github.com/awesome-cryosphere/cryosphere-links
+  content: Here you can download our bylaws.
+- title: Code of Conduct
+  link: https://berlincodeofconduct.org
+  content: We are following the Berling Code of Conduct.
+
+# - title: Coordinate Converter by the Polar Geospatial Center (PGC) at the University of Minnesota
+#   link: https://www.pgc.umn.edu/apps/convert/
+#   category: tool
+#   content: Convenient converter to for those working with high latitude projections like WGS84 Antarctic Polar Stereographic or WGS84 NSIDC Sea Ice Polar Stereographic North.
+
+# - title: Tutorial - Challenges working with data in polar regions
+#   link: https://mdsumner.github.io/polar-mapping-oghub/
+#   category: tool
+#   content: Tutorial on how to work with data in polar regions, including how to plot data on polar projections, and how to deal with the polar hole.

@@ -1,0 +1,13 @@
+- title: Slack space
+  description: Please join our Slack space for collaboration, networking, and exchange.
+  link: https://tinyurl.com/join-slack-ml4cryo
+  qr: slack_qr.png
+  order: 1
+  skip: False
+
+- title: Newsletter
+  description: Sign up to our monthly newsletter, distilling updates, and sharing papers, events, and opportunities.
+  link: https://tinyurl.com/join-mail-ml4cryo
+  qr: newsletter_qr.png
+  order: 1
+  skip: False

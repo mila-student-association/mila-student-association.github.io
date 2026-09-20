@@ -1,0 +1,40 @@
+<div class="hero-head">
+  <nav class="navbar container is-fixed-top" role=navigation>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <strong>{{ site.title }}</strong>
+      </a>
+	    <div role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-main">
+  		  <span aria-hidden="true"></span>
+    		<span aria-hidden="true"></span>
+    		<span aria-hidden="true"></span>
+  	  </div>
+    </div>
+    <div id="navbar-main" class="navbar-menu">
+      <div class="navbar-start">
+        {% for item in site.data.navigation %}
+
+          {% assign current_url = page.url | remove: '.html' | remove: '/' %}
+          {% assign nav_url = item.link | remove: '.html' | remove: '/' %}
+
+          <a
+            class="navbar-item{% if current_url == nav_url %} is-active{% endif %}"
+            href="{{ item.link | relative_url }}"
+          >
+            {{ item.name }}
+          </a>
+        {% endfor %}
+      </div>
+      <div class="navbar-end">
+    		<div class="navbar-item">
+    		  {% for item in site.data.social %}
+    			<a class="button navbar-social-button" href="{{ item.link }}">
+    			  <i class="{{ item.icon.type }} {{ item.icon.name }} {{ item.icon.source }}-{{ include.icon-size }}" aria-hidden="true">
+                  </i>
+    			</a>
+    		  {% endfor %}
+    		</div>
+      </div>
+    </div>
+  </nav>
+</div>

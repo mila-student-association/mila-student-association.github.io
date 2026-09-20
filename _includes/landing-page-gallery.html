@@ -1,0 +1,7 @@
+<div class="columns is-multiline">
+    {% assign items = site.data.landing-page | sort: "order" %}
+    {% for item in items %}
+      {% if item.skip %}{% continue %}{% endif %}
+          {% include landing-page-card.html %}
+    {% endfor %}
+</div>
