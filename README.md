@@ -1,4 +1,4 @@
-# AEM-mila.org website
+# Mila Student Association Website
 
 ## Template
 
